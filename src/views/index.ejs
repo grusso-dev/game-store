@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head',{title:"Game Store"}) %>
+<body>
+  
+  <%- include('./partials/header') %>
+  <main>
+    <% games.forEach(juego => { %>
+      <div class="card" style="width: 18rem;">
+        <img src="<%= juego.Imagen %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= juego.title %></h5>
+          <p class="card-text"><%= juego.Description %></p>
+          <a href="/games/<%= juego.id %>" class="btn btn-primary">update</a>
+        </div>
+      </div>
+      <br>
+     
+    <% }) %>
+    
+
+  </main>
+  <%- include('./partials/footer') %>
+ 
+</body>
+</html>
